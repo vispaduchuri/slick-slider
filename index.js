@@ -18,7 +18,10 @@ class App extends Component {
   render() {
     return (
       <div>
+
 <ReactSlider />
+<ReactSlider />
+
 <SwR/>
 <FRS/>
       </div>
