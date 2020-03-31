@@ -48,9 +48,14 @@ sliderRef && sliderRef.current.slickNext()
     }
   }
 const mouseHover = (e)=>{
-  console.log('user hovers on image')
    e.target.classList.add('someClassNameYouWantedToAdd')
-   console.log(e.target)
+  var wTile =e.target.parentNode
+    wTile.className = wTile.className + " yeah";
+    console.log(e.target.parentNode)
+}
+const mouseExit= (e)=>{
+   e.target.classList.remove('someClassNameYouWantedToAdd')
+
 }
 if(rowData.length>0)
 {
@@ -59,7 +64,7 @@ return(
    <div className='unique-slider'>
           <Slider {...settings} ref={sliderRef}>
           {rowData.map((i,index)=>(
-            <div className="unique-image" key={index} onMouseEnter={(e)=> mouseHover(e)}>
+            <div className="unique-image" key={index} onMouseEnter={(e)=> mouseHover(e)} onMouseOut={(e)=> mouseExit(e)}>
              <img src={i.picture.large}/>
              </div>
           ))}
