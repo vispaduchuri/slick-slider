@@ -47,7 +47,11 @@ sliderRef && sliderRef.current.slickNext()
       setEnd(current);
     }
   }
-
+const mouseHover = (e)=>{
+  console.log('user hovers on image')
+  var icon = document.getElementsByClassName('unique-image')
+  console.log(icon)
+}
 if(rowData.length>0)
 {
 return(
@@ -55,7 +59,7 @@ return(
    <div style={{ backgroundColor: "green", height: "140px" }}>
           <Slider {...settings} ref={sliderRef}>
           {rowData.map((i,index)=>(
-            <div key={index}>
+            <div className="unique-image" key={index} onMouseEnter={(e)=> mouseHover(e)}>
              <img src={i.picture.large}/>
              </div>
           ))}

@@ -20,10 +20,7 @@ class App extends Component {
       <div>
 
 <ReactSlider />
-<ReactSlider />
 
-<SwR/>
-<FRS/>
       </div>
     );
   }
