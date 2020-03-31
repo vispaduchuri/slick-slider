@@ -1,3 +1,15 @@
-h1, p {
-  font-family: Lato;
+.unique-slider{
+  background:green;
+  height:150px;
+
+}
+
+.unique-image{
+  
+}
+
+
+.someClassNameYouWantedToAdd
+{
+  padding:20px;
 }

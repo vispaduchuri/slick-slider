@@ -3,7 +3,7 @@ import axios from 'axios'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
+import './style.css'
 const ReactSlider =(props)=>{
   const sliderRef = useRef()
   const[rowData,setRowData]=useState([])
@@ -49,14 +49,14 @@ sliderRef && sliderRef.current.slickNext()
   }
 const mouseHover = (e)=>{
   console.log('user hovers on image')
-  var icon = document.getElementsByClassName('unique-image')
-  console.log(icon)
+   e.target.classList.add('someClassNameYouWantedToAdd')
+   console.log(e.target)
 }
 if(rowData.length>0)
 {
 return(
   <>
-   <div style={{ backgroundColor: "green", height: "140px" }}>
+   <div className='unique-slider'>
           <Slider {...settings} ref={sliderRef}>
           {rowData.map((i,index)=>(
             <div className="unique-image" key={index} onMouseEnter={(e)=> mouseHover(e)}>
