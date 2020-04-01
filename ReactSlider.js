@@ -55,7 +55,6 @@ const mouseHover = (e)=>{
 }
 const mouseExit= (e)=>{
    e.target.classList.remove('someClassNameYouWantedToAdd')
-
 }
 if(rowData.length>0)
 {
