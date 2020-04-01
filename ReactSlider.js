@@ -12,28 +12,15 @@ const ReactSlider =(props)=>{
 const [end,setEnd]=useState(0)
 
 useEffect(()=>{
-    window.addEventListener('wheel', (e)=>handleScroll(e));
 
   axios.get(`https://randomuser.me/api/?results=6`)
   .then(res=>res.data.results)
   .then(res=>setRowData(rowData.concat(res)))
   .catch(err=> {})
   return ( ()=>{
-    window.removeEventListener('wheel',(e)=>handleScroll(e));
   })
 },[end])
 
-const handleScroll =(e) =>{
-  if(e.deltaX >0)
-  {
-sliderRef && sliderRef.current.slickPrev()
-
-  }
-  else if(e.deltaX < 0)
-  {
-sliderRef && sliderRef.current.slickNext()
-  }
-}
 
 
   const settings = {
@@ -51,7 +38,6 @@ const mouseHover = (e)=>{
    e.target.classList.add('someClassNameYouWantedToAdd')
   var wTile =e.target.parentNode
     wTile.className = wTile.className + " yeah";
-    console.log(e.target.parentNode)
 }
 const mouseExit= (e)=>{
    e.target.classList.remove('someClassNameYouWantedToAdd')
